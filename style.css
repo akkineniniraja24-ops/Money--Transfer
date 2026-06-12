@@ -1,0 +1,56 @@
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#12003b;
+    color:white;
+    text-align:center;
+}
+
+.card{
+    width:350px;
+    margin:60px auto;
+    background:#25105e;
+    padding:25px;
+    border-radius:10px;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    background:#6a35ff;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#875cff;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    width:300px;
+    margin:auto;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    background:#6a35ff;
+    margin:10px;
+    padding:15px;
+    border-radius:5px;
+}
+
+a{
+    color:white;
+}
