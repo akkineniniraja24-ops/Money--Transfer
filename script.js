@@ -1,50 +1,15 @@
-let balance = 5000;
-
-function login()
-{
-    let email =
-    document.getElementById("email").value;
-
-    let password =
-    document.getElementById("password").value;
-
-    if(email !== "" && password !== "")
-    {
-        window.location.href =
-        "home.html";
-    }
-    else
-    {
-        alert("Enter Email and Password");
-    }
-}
-
-function checkBalance()
-{
-    document.getElementById("balance")
-    .innerHTML = "₹" + balance;
-}
-
-function transferMoney()
-{
-    let receiver =
-    document.getElementById("receiver").value;
-
-    let amount =
-    parseInt(document.getElementById("amount").value);
-
-    if(amount > balance)
-    {
-        document.getElementById("transferMsg")
-        .innerHTML = "Insufficient Balance";
-        return;
-    }
-
-    balance = balance - amount;
-
-    document.getElementById("transferMsg")
-    .innerHTML =
-    "₹" + amount +
-    " transferred to " +
-    receiver;
-}
+fetch("http://localhost:5000/api/transfer/send", {
+    method:"POST",
+    headers:{
+        "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+        sender:"user1@gmail.com",
+        receiver:"user2@gmail.com",
+        amount:1000
+    })
+})
+.then(res=>res.json())
+.then(data=>{
+    alert(data.message);
+});
