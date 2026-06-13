@@ -1,20 +1,14 @@
-async function sendMoney() {
-
-    const sender = document.getElementById("sender").value;
-    const receiver = document.getElementById("receiver").value;
-    const amount = document.getElementById("amount").value;
-
-    await fetch("http://localhost:5000/api/transaction", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            sender,
-            receiver,
-            amount
-        })
-    });
-
-    alert("Money Sent Successfully");
-}
+[
+  {
+    "url": "http://localhost:5000/api/transaction",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "sender": "sender_value",
+      "receiver": "receiver_value",
+      "amount": 0
+    }
+  }
+]
